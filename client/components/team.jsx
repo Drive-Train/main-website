@@ -10,11 +10,13 @@ const Team = (props) => {
     props.getBios();
   }, []);
 
+  const bioArr = props.bios.sort((a, b) => ((a.lastName > b.lastName) ? 1 : -1));
+
   return (
     <div style={{ marginTop: '3.75rem' }}>
       <div>
         <ul>
-          {props.bios.map((bio) => (
+          {bioArr.map((bio) => (
             <BioBox key={bio.id} bio={bio} />
           ))}
         </ul>

@@ -24,6 +24,10 @@ const Bio = db.define('Bio', {
     allowNull: false,
     defaultValue: 'lorem ipsum',
   },
+  LinkedIn: {
+    type: STRING,
+    allowNull: true,
+  },
   title: {
     type: STRING,
     allowNull: true,

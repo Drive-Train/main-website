@@ -4,6 +4,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/state-in-constructor */
 import React from 'react';
+import LinkedInLogo from '../assets/images/LinkedInLogo.png';
 
 const BioBox = ({ bio, key }) => {
   console.log(bio, key);
@@ -13,11 +14,14 @@ const BioBox = ({ bio, key }) => {
       <div key={bio.id} className="box">
         <div className="columns is-vcentered">
           <div className="column is-one-fifth">
-            <img src={bio.poster} alt={bio.name} width="80" height="100" />
+            <img src={bio.poster} alt={bio.name} />
           </div>
           <div className="column is-three-fifths" style={{ width: '480px' }}>
             <div className="field">
               <p className="title is-4">{`${bio.firstName} ${bio.lastName}`}</p>
+              <a href={bio.LinkedIn}>
+                <img src={LinkedInLogo} alt="LinkedIn-logo" height="21px" width="21px"/>
+              </a>
             </div>
           </div>
           <div className="field">

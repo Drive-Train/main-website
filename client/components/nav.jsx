@@ -44,8 +44,8 @@ class Nav extends Component {
               <img
                 alt=""
                 src={DriveTrainLogo}
-                width="112"
-                height="112"
+                width="100"
+                height="100"
               />
             </a>
 

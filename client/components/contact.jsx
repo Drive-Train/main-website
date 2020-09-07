@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 
@@ -27,6 +28,14 @@ const Contact = () => (
       <label className="label">Message</label>
       <div className="control">
         <textarea className="textarea" placeholder="Textarea" />
+      </div>
+    </div>
+    <div className="field is-grouped">
+      <div className="control">
+        <button className="button is-link">Submit</button>
+      </div>
+      <div className="control">
+        <button className="button is-link is-light">Cancel</button>
       </div>
     </div>
   </div>
