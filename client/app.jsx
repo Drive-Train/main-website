@@ -5,7 +5,7 @@ import {
 import Alert from 'react-s-alert';
 import {
   Nav, About, Login, LogOut,
-  Signup, landingPage,
+  Signup, landingPage, Team, Contact,
 } from './components/index';
 // eslint-disable-next-line import/no-named-as-default-member
 
@@ -17,11 +17,13 @@ const App = () => (
       </div>
       <div className="container">
         <Switch>
-          <Route path="/" component={landingPage} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/team" render={(props) => <Team props={props} />} />
+          <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" render={(props) => <Login props={props} />} />
           <Route exact path="/logout" render={(props) => <LogOut props={props} />} />
           <Route path="/signup" render={(props) => <Signup props={props} />} />
+          <Route path="/" component={landingPage} />
           <Redirect to="/" />
         </Switch>
       </div>

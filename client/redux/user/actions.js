@@ -77,7 +77,6 @@ export const signup = (username, password, history) => (dispatch) => {
     });
 };
 
-
 export const toggleAdmin = (userId, userName, isAdmin) => (dispatch) => {
   axios.put(`/api/users/setadmin/${userId}`, { isAdmin });
   axios.get('api/users/')

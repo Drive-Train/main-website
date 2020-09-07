@@ -1,7 +1,7 @@
 const userRouter = require('express').Router();
 const bcrypt = require('bcrypt');
 const {
-  User, Session, Review,
+  User, Session,
 } = require('../../db/Models/index');
 
 userRouter.get('/', async (req, res) => {
@@ -73,29 +73,6 @@ userRouter.post('/signup', async (req, res) => {
   }
 });
 
-userRouter.post('/review', async (req, res) => {
-  const { review, rating, movieId } = req.body;
-  const { user } = req;
-  const newReview = await Review.create({
-    review,
-    rating,
-    movieId,
-    username: user.username,
-    UserId: user.id,
-  });
-  if (newReview) {
-    res.send(newReview);
-  } else {
-    res.sendStatus(400);
-  }
-});
-
-userRouter.get('/reviews/:id', async (req, res) => {
-  const { id } = req.params;
-  const reviews = await Review.findAll({ where: { movieId: id } });
-  res.send(reviews);
-});
-
 userRouter.put('/setadmin/:userid/', async (req, res) => {
   await User.update({ isAdmin: req.body.isAdmin },
     { where: { id: req.params.userid } });
@@ -111,11 +88,6 @@ userRouter.put('/changeusername/:userid/', async (req, res) => {
 userRouter.get('/:userid', async (req, res) => {
   const updatedUser = await User.findOne({ where: { id: req.params.userid } });
   res.send(updatedUser);
-});
-
-userRouter.get('/userreviews/:userId', async (req, res) => {
-  const reviews = await Review.findAll({ where: { UserId: req.params.userId } });
-  res.send(reviews);
 });
 
 module.exports = userRouter;

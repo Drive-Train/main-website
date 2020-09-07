@@ -74,8 +74,13 @@ class Nav extends Component {
               <Link to="/about" className="navbar-item">
                 About
               </Link>
+              <Link to="/team" className="navbar-item">
+                <i style={{ marginRight: '5px' }} className="navbar-item" />
+                {' '}
+                Team
+              </Link>
               <Link to="/contact" className="navbar-item">
-                <i style={{ marginRight: '5px' }} className="fa fa-shopping-cart" />
+                <i style={{ marginRight: '5px' }} className="navbar-item" />
                 {' '}
                 Contact Us
               </Link>

@@ -6,6 +6,8 @@ import Login from './login';
 import LogOut from './logoutPage';
 import Signup from './signup';
 import landingPage from './landingPage';
+import Team from './team';
+import Contact from './contact';
 
 export {
   Nav,
@@ -13,5 +15,7 @@ export {
   Login,
   LogOut,
   Signup,
+  Contact,
+  Team,
   landingPage,
 };

@@ -1,5 +1,4 @@
 const Sequelize = require('sequelize');
-const bcrypt = require('bcrypt');
 
 const {
   UUID, UUIDV4, STRING, TEXT,
@@ -25,10 +24,18 @@ const Bio = db.define('Bio', {
     allowNull: false,
     defaultValue: 'lorem ipsum',
   },
+  title: {
+    type: STRING,
+    allowNull: true,
+  },
   poster: {
     type: STRING,
     allowNull: true,
-  }
+  },
+  email: {
+    type: STRING,
+    allowNull: true,
+  },
 });
 
 module.exports = { Bio };
