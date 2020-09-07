@@ -60,6 +60,7 @@ app.use(cors());
 app.use(express.static(PUBLIC_PATH));
 app.use(express.static(DIST_PATH));
 // app.use(preventDirectAccess);
+// hello
 app.use('/api', require('./routers/index'));
 
 app.get('*', (req, res) => {
